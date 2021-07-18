@@ -1,0 +1,82 @@
+package medium;
+
+public class matrix_addition {
+	
+	public static void main(String[] args){
+		
+		 
+		  int a[][] = {{1,3,4},{2,4,3},{3,4,5}};
+		 int b[][] = {{1,3,4},{2,4,3},{1,2,4}};
+		
+		 
+		int c[][] = add(a,b);
+		int d[][] = multiply(a,b);
+		
+		//// printing addition of given matrix ////
+		System.out.println("Addition of given matrices is :");
+		for(int i=0 ; i<3 ;i++) {
+			for (int j=0 ; j<3; j++) {
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+ 
+		 
+		
+		
+		
+		//// printing multiplication of given matrix ////
+		System.out.println("Multiplication of given matrix is :");
+		for(int i=0 ; i<3 ; i++) {
+			for(int j=0 ; j<3 ; j++) {
+				System.out.print(d[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+
+	
+	
+	//// method to find addition of matrix ////
+	public static int[][] add(int x[][], int y[][]) {
+		 int res[][] = new int[3][3];		   
+		   for(int i=0 ; i<3;i++) {
+			     for(int j=0 ; j<3 ;j++) {
+			    	  res[i][j]=x[i][j]+y[i][j];
+			     }
+		   }
+		return res;
+	}
+	
+	
+	
+	
+	//// method to find multiplication of matrix ////
+	public static int[][] multiply(int x[][], int y[][]) {
+		int res[][] = new int[3][3];
+		for(int i=0 ; i<3 ; i++) {
+			 for(int j=0 ; j<3 ; j++) {
+				 
+				   for(int k=0 ; k<3 ; k++) {
+					   res[i][j] += x[i][k] * y[k][j] ;
+				   }
+				 
+				
+			 }
+			 
+		}
+		return res;
+	}
+	
+	
+	
+	
+	
+}
